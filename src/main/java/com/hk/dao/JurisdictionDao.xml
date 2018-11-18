@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hk.dao.JurisdictionDao">
+    <!-- 添加权限 -->
+    <insert id="addJurisdiction" >
+        insert into jurisdiction(jId,jDescribe,jUrl,jNavigation,jCode) 
+        value(#{jId},#{jDescribe},#{jUrl},#{jNavigation},#{jCode})
+    </insert>
+    <!-- 删除权限 -->
+    <delete id="deleteJurisdiction" >
+        delete from jurisdiction 
+        where jId = #{jId}
+    </delete>
+    <!--权限实体结果映射 -->
+    <resultMap type="Jurisdiction" id="JurisdictionResult">
+        <id property="jId" column="jId"/>
+        <result property="jDescribe" column="jDescribe"/>
+        <result property="jUrl" column="jUrl"/>
+        <result property="jNavigation" column="jNavigation"/>
+        <result property="jCode" column="jCode"/>
+    </resultMap>
+    <!-- 根据id查询权限信息 -->
+    <select id="findById"  resultMap="JurisdictionResult">
+        select * from jurisdiction  
+        where jId = #{jId}
+    </select>
+    <!-- 根据角色id查询所有权限 -->
+    <select id="findJurisdictionsByRoleId" resultMap="JurisdictionResult">
+        select j.* from role_jurisdiction rj,jurisdiction j
+        where rj.rleId = #{rleId} 
+        	 AND rj.jId = j.jId 
+    </select>
+    <!-- 根据角色id查询所有导航结点 -->
+    <select id="findNavisByRoleId" resultMap="JurisdictionResult">
+        select j.* from role_jurisdiction rj,jurisdiction j
+        where rj.rleId = #{rleId} 
+        	 AND rj.jId = j.jId 
+        		 AND j.jNavigation = 1
+    </select>
+    <!-- 查询所有权限 -->
+    <select id="findAllJurisdictions" resultMap="JurisdictionResult">
+        select * from jurisdiction
+    </select>
+    <!-- 更新权限-->
+    <update id="updateJurisdiction" >
+        update jurisdiction 
+        set jDescribe = #{jDescribe},
+        	jUrl = #{jUrl},
+        	jNavigation = #{jNavigation},
+        	jCode = #{jCode} 
+        where jId = #{jId}
+    </update>
+    <!-- 删除角色权限关联 -->
+    <delete id="deleteRoleJurisdiction" >
+        delede from role_jurisdiction 
+        where jId = #{jId}
+    </delete>
+    <select id="selectRoleJurisdiction" resultType="int">
+    	select count(*) from role_jurisdiction
+    	where jId = #{jId}
+    </select>
+</mapper>

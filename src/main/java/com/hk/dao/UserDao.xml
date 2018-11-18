@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hk.dao.UserDao">
+    <!-- 添加用户 -->
+    <insert id="addUser" >
+        insert into user(uId,uName,uPassword,uPasswordSalt,uDate) 
+        value(#{uId},#{uName},#{uPassword},#{uPasswordSalt},#{uDate})
+    </insert>
+    <!-- 删除用户 -->
+    <delete id="deleteUser" >
+        delete from user where uId = #{uId}
+    </delete>
+    <!-- 用户实体结果映射 -->
+    <resultMap type="User" id="userResult">
+        <id property="uId" column="uId"/>
+        <result property="uName" column="uName"/>
+        <result property="uPassword" column="uPassword"/>
+        <result property="uPasswordSalt" column="uPasswordSalt"/>
+        <result property="uDate" column="uDate"/>
+    </resultMap>
+    <!--根据Id查询用户-->
+    <select id="findUserByUserId" resultMap="userResult">
+        select * from user 
+        where uId = #{uId}
+    </select>
+    <!-- 查询所有用户 -->
+    <select id="findAllUsers" resultMap="userResult">
+        select * from user 
+    </select>
+    <!-- 删除用户角色关联 -->
+    <delete id="deleteUserRole" >
+        delete from user_role 
+        where uId = #{uId}
+    </delete>
+    <!-- 添加用户角色关联 -->
+    <insert id="addUserRole" >
+        insert into user_role(uId,rleId) 
+        value(#{uId},#{rleId})
+    </insert>
+    <!-- 根据用户Id查询相应角色 -->
+    <select id="findRolesByUserId"  resultType="string">
+        select r.RLEcode 
+	    from role r,user_role ur 
+	    where ur.uId = #{uId} 
+	        AND ur.rleId = r.rleId
+    </select>
+    <!-- 根据用户Id查询相应权限 -->
+    <select id="findJurisdictionsByUserId" resultType="string">
+        select j.Jcode 
+        from role r,user_role ur,jurisdiction j,role_jurisdiction rj 
+        where ur.uId = #{uId} 
+	        AND ur.rleId = r.rleId 
+	        	AND r.rleId = rj.rleId  
+	        		AND rj.jId = j.jId 
+    </select>
+</mapper>
