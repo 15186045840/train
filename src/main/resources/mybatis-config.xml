@@ -6,7 +6,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<typeAliases>
 		<package name="com.hk.bean"/>
 	</typeAliases>
-
 	<!-- 加载映射文件  -->
 	<mappers>
 	<!--  自动寻找名字和dao类名字相同的xml  -->
