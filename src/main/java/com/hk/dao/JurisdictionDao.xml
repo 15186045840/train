@@ -56,6 +56,7 @@
         delede from role_jurisdiction 
         where jId = #{jId}
     </delete>
+    <!-- 查询角色权限关联 -->
     <select id="selectRoleJurisdiction" resultType="int">
     	select count(*) from role_jurisdiction
     	where jId = #{jId}

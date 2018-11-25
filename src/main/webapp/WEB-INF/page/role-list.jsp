@@ -160,7 +160,7 @@
 					for(var i in data){
 						obj.append('<input type="checkbox" name="jurisdictionIds" value="'+
 								data[i].jId+'"/>'+data[i].jDescribe+':');
-						if(data[i].jNavigation===1){
+						if(data[i].jNavigation==="1"){
 							obj.append('<font color="red">导航结点</font>');
 						}else{
 							obj.append("非导航结点");

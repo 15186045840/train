@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hk.dao.NewDao">
+    <!-- 添加动态 -->
+    <insert id="addNew" >
+        insert into news(nId,nType,nTitle,nContent,nDate,nUrl) 
+        value(#{nId},#{nType},#{nTitle},#{nContent},#{nDate},#{nUrl})
+    </insert>
+    <!-- 删除动态 -->
+    <delete id="deleteNew" >
+        delete from news where nId = #{nId}
+    </delete>
+    <!-- 动态实体结果映射 -->
+    <resultMap type="News" id="newResult">
+        <id property="nId" column="nId"/>
+        <result property="nType" column="nType"/>
+        <result property="nTitle" column="nTitle"/>
+        <result property="nContent" column="nContent"/>
+        <result property="nDate" column="nDate"/>
+        <result property="nUrl" column="nUrl"/>
+    </resultMap>
+    <!--根据Id查询动态-->
+    <select id="getNewByNewId" resultMap="newResult">
+        select * from news 
+        where nId = #{nId}
+    </select>
+    <!-- 查询所有动态 -->
+    <select id="getAllNews" resultMap="newResult">
+        select * from news 
+    </select>
+     <!-- 更新动态 -->
+    <update id="updateNew" >
+        update news 
+        set nType = #{nType},
+        	nTitle = #{nTitle},
+        	nContent = #{nContent},
+        	nUrl = #{nUrl}
+        where nId = #{nId}
+    </update>
+</mapper>

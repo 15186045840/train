@@ -61,8 +61,6 @@ public class UserController {
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		String da=df.format(day);
 		user.setuDate(da);
-		System.out.println("添加用户");
-		System.out.println(user);
 		userService.addUser(user, roleIds);
 		return user;
 	}
@@ -71,9 +69,6 @@ public class UserController {
 	@RequestMapping("/showroles")
 	@ResponseBody
 	public List<Role> shwoRoles(String userId){
-		System.out.println(userId);
-		System.out.println("查询角色");
-		System.out.println(roleService.getRolesByUserId(userId));
 		return roleService.getRolesByUserId(userId);
 	}
 
@@ -102,7 +97,6 @@ public class UserController {
 	@RequestMapping("/corelationRole")
 	@ResponseBody
 	public void corelationRole(String userId,String...roleIds){
-		System.out.println("修改角色");
 		userService.updateUserRoles(userId, roleIds);
 	}
 }

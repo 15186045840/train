@@ -199,7 +199,7 @@
 					$(".jurisdiction-form input[name='jId']").val(jurisdictionId);
 					$(".jurisdiction-form input[name='jDescribe']").val(data.jDescribe);
 					$(".jurisdiction-form input[name='jUrl']").val(data.jUrl);
-					if(data.jNavigation===1){
+					if(data.jNavigation==="1"){
 						$(".jurisdiction-form input[type='checkbox'][name='jNavigation']").prop("checked",true);
 					}
 					$(".jurisdiction-form input[name='jCode']").val(data.jCode);

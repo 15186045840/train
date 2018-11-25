@@ -87,12 +87,15 @@
         </property>
         <property name="filterChainDefinitions">
             <value>
-                /=authc
-                /index=authc
-                /user/login=authc<!-- 使用authc -->
-                /logout=logout
-                /static/**=anon<!-- 静态资源文件访问 -->
-                /**=user
+            	<!-- 修改 -->
+            	/page/*.jsp=anon
+            	<!-- 修改 -->
+                <!--  /=authc-->
+                /admin=authc
+                /user/login=authc <!-- 使用authc 表示该 uri 需要认证才能访问 -->
+                /logout=logout <!-- 表示注销,可以当作固定配置 -->
+                /static/**=anon <!-- #表示该 uri可以匿名访问    静态资源文件访问  -->
+                <!-- /**=user # 表示该 uri 需要认证或通过记住我认证才能访问  -->
             </value>
         </property>
     </bean>

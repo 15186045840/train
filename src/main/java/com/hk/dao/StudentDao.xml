@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hk.dao.StudentDao">
+    <!-- 添加广告 -->
+    <insert id="addStudent" >
+        insert into student(sId,sName,sSex,sAge,sPassword,sDate) 
+        value(#{sId},#{sName},#{sSex},#{sAge},#{sPassword},#{sDate}) 
+    </insert>
+    <!-- 删除广告 -->
+    <delete id="deleteStudent" >
+        delete from student 
+        where sId = #{sId}
+    </delete>
+    <!-- 广告实体结果映射 -->
+    <resultMap type="Student" id="studentResult">
+        <id property="sId" column="sId"/>
+        <result property="sName" column="sName"/>
+        <result property="sSex" column="sSex"/>
+        <result property="sAge" column="sAge"/>
+        <result property="sPassword" column="sPassword"/>
+        <result property="sDate" column="sDate"/>
+    </resultMap>
+    <!-- 根据id查询广告信息 -->
+    <select id="findById"  resultMap="studentResult">
+        select * from student 
+        where sId = #{sId}
+    </select>
+    <!-- 查询所有广告-->
+    <select id="findAllStudents" resultMap="studentResult">
+        select * from student 
+    </select>
+    <!-- 更新广告 -->
+    <update id="updateStudent" >
+        update student 
+        set sName = #{sName},
+        	sSex = #{sSex},
+        	sAge = #{sAge},
+        	sPassword = #{sPassword},
+        	sDate = #{sDate}
+        where sId = #{sId}
+    </update>
+    <select id="selectStudent" resultMap="studentResult">
+    	select * from student
+    	where sId = #{sId} 
+    		AND sPassword = #{sPassword}
+    </select>
+</mapper>

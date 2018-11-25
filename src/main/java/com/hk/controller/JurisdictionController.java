@@ -33,7 +33,6 @@ public class JurisdictionController {
 	@RequestMapping("/add")
 	@ResponseBody
 	public Jurisdiction addJurisdiction(Jurisdiction jurisdiction){
-		System.out.println("添加权限"+jurisdiction);
 		String nt = jurisdiction.getjNavigation();
 		if(nt == null) {
 			jurisdiction.setjNavigation("0");
@@ -47,7 +46,6 @@ public class JurisdictionController {
 	@RequestMapping("/delete")
 	@ResponseBody
 	public void deleteJurisdiction(String jurisdictionId){
-		System.out.println("删除权限"+jurisdictionId);
 		jurisdictionService.deleteJurisdiction(jurisdictionId);
 	}
 	
@@ -55,7 +53,6 @@ public class JurisdictionController {
 	@RequestMapping("/deletemore")
 	@ResponseBody
 	public void deleteMoreJurisdictions(String...jurisdictionIds){
-		System.out.println("删除多项权限"+jurisdictionIds);
 		jurisdictionService.deleteMoreJurisdictions(jurisdictionIds);
 	}
 	
@@ -70,7 +67,6 @@ public class JurisdictionController {
 	@RequestMapping("/update")
 	@ResponseBody
 	public void updateJurisdiction(Jurisdiction jurisdiction){
-		System.out.println("更新权限"+jurisdiction);
 		String nt = jurisdiction.getjNavigation();
 		if(nt == null) {
 			jurisdiction.setjNavigation("0");
