@@ -88,7 +88,7 @@
         <property name="filterChainDefinitions">
             <value>
             	<!-- 修改 -->
-            	/page/*.jsp=anon
+            	
             	<!-- 修改 -->
                 <!--  /=authc-->
                 /admin=authc

@@ -79,36 +79,5 @@ public class StudentController {
 	public void updateStudent(Student student){
 		studentService.updateStudent(student);
 	}
-	
-	@RequestMapping("/insert")
-	public String insertStudent(Student student){
-		System.err.println("注册"+student);
-		String age = student.getsAge();
-		if(age==null||age=="") {
-			student.setsAge("0");
-		}
-		Date day=new Date();    
-		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		String da=df.format(day);
-		student.setsDate(da);
-		System.out.println(student);
-		studentService.addStudent(student);
-		return "redirect:../page/index.jsp";
-	}
-	
-	@RequestMapping("/select")
-	public ModelAndView selectStudent(Student student){
-		Student st = studentService.selectStudent(student);
-		ModelAndView mav=new ModelAndView("");
-		mav.addObject("student", st);
-		if(st!=null) {
-			mav.addObject("登录成功");
-			return mav;
-		}else {
-			mav.addObject("登录失败");
-			return mav;
-		}
-		//return "redirect:../page/index.jsp";
-	}
 
 }

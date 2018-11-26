@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hk.dao.InteractionDao">
+    <!-- 添加反馈 -->
+    <insert id="addInteraction" >
+        insert into interaction(iName,iPhone,iEmail,iContent,iDate) 
+        value(#{iName},#{iPhone},#{iEmail},#{iContent},#{iDate}) 
+    </insert>
+    <!-- 反馈实体结果映射 -->
+    <resultMap type="Interaction" id="interactionResult">
+        <id property="iId" column="iId"/>
+        <result property="iName" column="iName"/>
+        <result property="iPhone" column="iPhone"/>
+        <result property="iEmail" column="iEmail"/>
+        <result property="iContent" column="iContent"/>
+        <result property="iDate" column="iDate"/>
+    </resultMap>
+    <!-- 查询所有反馈-->
+    <select id="getAllInteractions" resultMap="interactionResult">
+        select * from interaction
+    </select>
+    <!-- 删除反馈 -->
+    <delete id="deleteInteraction" >
+        delete from interaction 
+        where iId = #{iId}
+    </delete>
+</mapper>
