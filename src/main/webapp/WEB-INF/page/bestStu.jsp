@@ -62,8 +62,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="w3l_team_grd">
 						<img src="/trains/bs4.png" alt=" " class="img-responsive" />
 						<div class="w3_team_grid">
-							<h4>李三石</h4>
-							<h5>古往今来！史上最佳最佳最佳佳学员！</h5>
+							<h4>霍建华</h4>
+							<h5>2017届最佳学员</h5>
 						</div>
 					</div>
 				</div>
