@@ -1,8 +1,6 @@
 package com.hk.bean;
 
-import java.io.Serializable;
-
-public class Jurisdiction implements Serializable{
+public class Jurisdiction {
 	private String jId;
 	private String jDescribe;
 	private String jUrl;

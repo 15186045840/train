@@ -9,6 +9,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html lang="en">
 <head>
 <title>特色美食</title>
+</head>
+<body>
 <!-- top -->
 <c:if test="${student.sId == null}">
 	<jsp:include page="top1.jsp"/> 
@@ -32,11 +34,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="w3_agile_portfolio_grids">
 			<div class="agile_portfolio_grid">
 				<div class="w3_agileits_portfolio_grid">
-					<a href="${pageContext.request.contextPath}/static
-/images/food1.jpg" >
+					<a href="/trains/food1.jpg" >
 						<div class="view effect">
-							<img src="${pageContext.request.contextPath}/static
-/images/food1.jpg" alt=" " class="img-responsive" />
+							<img src="/trains/food1.jpg" alt=" " class="img-responsive" />
 							<div class="mask"></div>
 							<div class="content">
 								<h4>味绝鱼头</h4>
@@ -45,11 +45,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</a>
 				</div>
 				<div class="w3_agileits_portfolio_grid">
-					<a href="${pageContext.request.contextPath}/static
-/images/food2.jpg" >
+					<a href="/trains/food2.jpg" >
 						<div class="view effect">
-							<img src="${pageContext.request.contextPath}/static
-/images/food2.jpg" alt=" " class="img-responsive" />
+							<img src="/trains/food2.jpg" alt=" " class="img-responsive" />
 							<div class="mask"></div>
 							<div class="content">
 								<h4>缅甸野生蟹</h4>
@@ -60,11 +58,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 			<div class="agile_portfolio_grid">
 				<div class="w3_agileits_portfolio_grid">
-					<a href="${pageContext.request.contextPath}/static
-/images/food3.jpg" >
+					<a href="/trains/food3.jpg" >
 						<div class="view effect">
-							<img src="${pageContext.request.contextPath}/static
-/images/food3.jpg" alt=" " class="img-responsive" />
+							<img src="/trains/food3.jpg" alt=" " class="img-responsive" />
 							<div class="mask"></div>
 							<div class="content">
 								<h4>蒜蓉蒸带子</h4>
@@ -73,11 +69,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</a>
 				</div>
 				<div class="w3_agileits_portfolio_grid">
-					<a href="${pageContext.request.contextPath}/static
-/images/food4.jpg" >
+					<a href="/trains/food4.jpg" >
 						<div class="view effect">
-							<img src="${pageContext.request.contextPath}/static
-/images/food4.jpg" alt=" " class="img-responsive" />
+							<img src="/trains/food4.jpg" alt=" " class="img-responsive" />
 							<div class="mask"></div>
 							<div class="content">
 								<h4>味绝美蛙</h4>
@@ -88,11 +82,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 			<div class="agile_portfolio_grid">
 				<div class="w3_agileits_portfolio_grid">
-					<a href="${pageContext.request.contextPath}/static
-/images/food5.jpg" >
+					<a href="/trains/food5.jpg" >
 						<div class="view effect">
-							<img src="${pageContext.request.contextPath}/static
-/images/food5.jpg" alt=" " class="img-responsive" />
+							<img src="/trains/food5.jpg" alt=" " class="img-responsive" />
 							<div class="mask"></div>
 							<div class="content">
 								<h4>红烧剔骨鸡</h4>
@@ -101,11 +93,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</a>
 				</div>
 				<div class="w3_agileits_portfolio_grid">
-					<a href="${pageContext.request.contextPath}/static
-/images/food6.jpg" >
+					<a href="/trains/food6.jpg" >
 						<div class="view effect">
-							<img src="${pageContext.request.contextPath}/static
-/images/food6.jpg" alt=" " class="img-responsive" />
+							<img src="/trains/food6.jpg" alt=" " class="img-responsive" />
 							<div class="mask"></div>
 							<div class="content">
 								<h4>香辣味烤鱼</h4>
@@ -118,8 +108,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 	</div>
 <!-- //portfolio -->
-	<script type="text/javascript"  src="${pageContext.request.contextPath}/static
-/js/jquery.gallery.js" ></script>
+	<script type="text/javascript"  src="${pageContext.request.contextPath}/static/js/jquery.gallery.js" ></script>
 	<script>
 		$(function() {
 			$('.w3_agile_portfolio_grids').createSimpleImgGallery();

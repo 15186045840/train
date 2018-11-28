@@ -9,6 +9,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html lang="en">
 <head>
 <title>公司简介</title>
+</head>
+<body>
 <!-- top -->
 <c:if test="${student.sId == null}">
 	<jsp:include page="top1.jsp"/> 
@@ -50,8 +52,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</div>
 				</div>
 				<div class="col-md-4 agileinfo_about_grid_right">
-					<img src="${pageContext.request.contextPath}/static
-/images/p1.jpg" alt=" " class="img-responsive" />
+					<img src="/trains/p1.jpg" alt=" " class="img-responsive" />
 				</div>
 				<div class="clearfix"> </div>
 			</div>
@@ -65,8 +66,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="w3layouts_team_grids">	
 				<div class="col-md-3 w3layouts_team_grid">
 					<div class="w3l_team_grd">
-						<img src="${pageContext.request.contextPath}/static
-/images/p5.png" alt=" " class="img-responsive" />
+						<img src="/trains/p5.png" alt=" " class="img-responsive" />
 						<div class="w3_team_grid">
 							<h4>梦润集团</h4>
 						</div>
@@ -74,8 +74,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 				<div class="col-md-3 w3layouts_team_grid">
 					<div class="w3l_team_grd">
-						<img src="${pageContext.request.contextPath}/static
-/images/p2.png" alt=" " class="img-responsive" />
+						<img src="/trains/p2.png" alt=" " class="img-responsive" />
 						<div class="w3_team_grid">
 							<h4>梦润活动</h4>
 						</div>
@@ -83,8 +82,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 				<div class="col-md-3 w3layouts_team_grid">
 					<div class="w3l_team_grd">
-						<img src="${pageContext.request.contextPath}/static
-/images/p3.png" alt=" " class="img-responsive" />
+						<img src="/trains/p3.png" alt=" " class="img-responsive" />
 						<div class="w3_team_grid">
 							<h4>梦润产品</h4>
 						</div>
@@ -92,8 +90,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 				<div class="col-md-3 w3layouts_team_grid">
 					<div class="w3l_team_grd">
-						<img src="${pageContext.request.contextPath}/static
-/images/p4.png" alt=" " class="img-responsive" />
+						<img src="/trains/p4.png" alt=" " class="img-responsive" />
 						<div class="w3_team_grid">
 							<h4>梦润环境</h4>
 						</div>

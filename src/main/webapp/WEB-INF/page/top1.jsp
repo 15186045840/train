@@ -14,23 +14,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //for-mobile-apps -->
-<link href="${pageContext.request.contextPath}/static
-/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${pageContext.request.contextPath}/static
-/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="${pageContext.request.contextPath}/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="${pageContext.request.contextPath}/static/css/style.css" rel="stylesheet" type="text/css" media="all" />
 <!-- js -->
-<script type="text/javascript" src="${pageContext.request.contextPath}/static
-/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/jquery-2.1.4.min.js"></script>
 <!-- //js -->
- <link rel="stylesheet" href="${pageContext.request.contextPath}/static
-/css/jquery.gallery.css">
+ <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/jquery.gallery.css">
 <!-- pop-up-box -->
-<link href="${pageContext.request.contextPath}/static
-/css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+<link href="${pageContext.request.contextPath}/static/css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
 <!-- //pop-up-box -->
 <!-- font-awesome icons -->
-<link href="${pageContext.request.contextPath}/static
-/css/font-awesome.css" rel="stylesheet"> 
+<link href="${pageContext.request.contextPath}/static/css/font-awesome.css" rel="stylesheet"> 
 <!-- //font-awesome icons -->
 <link href="http://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900&amp;subset=latin-ext" rel="stylesheet">
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>

@@ -10,4 +10,5 @@ public interface NewDao {
 	List<News> getAllNews();//查询所有动态
 	News getNewByNewId(String newId);//根据ID查询动态
 	void updateNew(News news);//修改动态
+	List<News> getNews();//获取所有动态
 }

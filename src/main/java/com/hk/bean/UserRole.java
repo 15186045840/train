@@ -1,8 +1,7 @@
 package com.hk.bean;
 
-import java.io.Serializable;
 
-public class UserRole implements Serializable{
+public class UserRole {
 	private String uId;
 	private String rleId;
 	

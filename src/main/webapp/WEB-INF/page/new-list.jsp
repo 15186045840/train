@@ -109,7 +109,7 @@
 	                        <td class="newid">${news.nId }</td>
 	                        <td>${news.nType }</td>
 	                        <td>${news.nTitle }</td>
-	                        <td>${news.nContent }</td>
+	                        <td><a href="javascript:void(0);" class="show-new-content" >查看</a></td>
 	                        <td>${news.nUrl }</td>
                           <td>${news.nDate }</td>
 	                        <td><a class="glyphicon glyphicon-pencil show-newinfo-form" aria-hidden="true" title="修改动态信息" href="javascript:void(0);" data-toggle="modal" data-target="#new-form-div"></a>
@@ -182,6 +182,22 @@
 				});
 			}
 		});
+    $(".new-list").on("click",".show-new-content",function(){
+      var newId=$(this).parents("tr").find(".newid").html();
+      var newTd=$(this).parent();
+      //请求查看动态内容
+      $.ajax({
+        url:"getnew.html",
+        data:{newId:newId},
+        type:"POST",
+        dataType:"json",
+        success:function(data){
+          newTd.html("");
+          var content=data.nContent;
+          newTd.append(content);
+        }
+      });
+    });
 		$(".show-add-form").click(function(){
 			resetNewForm("添加新动态","添加");
 		});
@@ -220,7 +236,7 @@
 	                        '<td class="newid">'+data.nId+'</td>'+
 	                        '<td>'+data.nType+'</td>'+
 	                        '<td>'+data.nTitle+'</td>'+
-	                        '<td>'+data.nContent+'</td>'+
+	                        '<td><a href="javascript:void(0);" class="show-new-content" >查看</a></td>'+
 	                        '<td>'+data.nUrl+'</td>'+
                           '<td>'+data.nDate+'</td>'+
 	                        '<td><a class="glyphicon glyphicon-pencil show-newinfo-form" aria-hidden="true" title="修改动态信息" href="javascript:void(0);" data-toggle="modal" data-target="#new-form-div"></a> '+

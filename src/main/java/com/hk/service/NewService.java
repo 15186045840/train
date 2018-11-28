@@ -11,5 +11,5 @@ public interface NewService {
 	News getNewByNewId(String newId);//根据动态Id获取动态
 	List<News> getAllNews();//获取所有动态
 	void updateNew(News news);//修改动态
-
+	List<News> getNews();//获取所有动态
 }

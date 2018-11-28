@@ -71,7 +71,7 @@
                     <td class="interactionname">${interaction.iName }</td>
                     <td class="interactionphone">${interaction.iPhone }</td>
                     <td class="interactionemail">${interaction.iEmail }</td>
-                    <td class="interactioncontent">${interaction.iContent }</td>
+                    <td><a href="javascript:void(0);" class="show-interaction-content" >查看</a></td>
                     <td class="interactiondate">${interaction.iDate }</td>
                     <td>
                       <a class="glyphicon glyphicon-remove delete-this-interaction" aria-hidden="true" title="删除反馈" href="javascript:void(0);"></a>
@@ -112,6 +112,22 @@
       }
     });
 
+    $(".interaction-list").on("click",".show-interaction-content",function(){
+      var interactionId=$(this).parents("tr").find(".interactionid").html();
+      var interactionTd=$(this).parent();
+      //请求查看反馈内容
+      $.ajax({
+        url:"getinteraction.html",
+        data:{interactionId:interactionId},
+        type:"POST",
+        dataType:"json",
+        success:function(data){
+          interactionTd.html("");
+          var content=data.iContent;
+          interactionTd.append(content);
+        }
+      });
+    });
     //删除反馈
     $(".interaction-list").on("click",".delete-this-interaction",function(){
       var interactionTr=$(this).parents("tr");

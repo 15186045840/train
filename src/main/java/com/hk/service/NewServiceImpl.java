@@ -54,5 +54,11 @@ public class NewServiceImpl implements NewService {
 		// TODO Auto-generated method stub
 		newDao.updateNew(news);
 	}
+
+	@Override
+	public List<News> getNews() {
+		// TODO Auto-generated method stub
+		return newDao.getNews();
+	}
 	
 }

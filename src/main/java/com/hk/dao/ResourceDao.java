@@ -12,4 +12,5 @@ public interface ResourceDao {
 	void updateResource(Resource resource);//更新资源
 	void deleteCourseResource(String resourceId);//删除课程资源关联
 	List<Resource> getResourcesByCourseId(String courseId);//根据课程Id查询资源
+	List<Resource> getResources();//查询多个资源
 }

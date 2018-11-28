@@ -25,4 +25,8 @@
         delete from interaction 
         where iId = #{iId}
     </delete>
+    <select id="getInteractionById" resultMap="interactionResult">
+        select * from interaction 
+        where iId = #{iId}
+    </select>
 </mapper>

@@ -39,6 +39,14 @@ public class InteractionController {
 	@ResponseBody
 	public void deleteMoreInteractions(String...interactionIds){
 		interactionService.deleteMoreInteractions(interactionIds);
+		System.out.println();
+	}
+	
+	@RequiresPermissions("interaction:list")
+	@RequestMapping("/getinteraction")
+	@ResponseBody
+	public Interaction getInteractionById(String interactionId){
+		return interactionService.getInteractionById(interactionId);
 	}
 
 }

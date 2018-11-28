@@ -12,6 +12,6 @@ public interface ResourceService {
 	List<Resource> getAllResources();//查询所有资源
 	void updateResource(Resource resource);//更新资源
 	List<Resource> getResourcesByCourseId(String courseId);//根据课程Id查询资源
-
+	List<Resource> getResources();//查询多个资源
 
 }

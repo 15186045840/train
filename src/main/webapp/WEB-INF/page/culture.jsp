@@ -9,6 +9,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html lang="en">
 <head>
 <title>文化产品</title>
+</head>
+<body>
 <!-- top -->
 <c:if test="${student.sId == null}">
 	<jsp:include page="top1.jsp"/> 

@@ -9,6 +9,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html lang="en">
 <head>
 <title>挂牌单位</title>
+</head>
+<body>
 <!-- top -->
 <c:if test="${student.sId == null}">
 	<jsp:include page="top1.jsp"/> 
@@ -49,8 +51,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</div>
 				</div>
 				<div class="col-md-4 agileinfo_about_grid_right">
-					<img src="${pageContext.request.contextPath}/static
-/images/9.jpg" alt=" " class="img-responsive" />
+					<img src="/trains/9.jpg" alt=" " class="img-responsive" />
 				    <h1><center>张明富</center></h1>
 					<h3><center>梦润集团董事长</center></h3>
 				</div>

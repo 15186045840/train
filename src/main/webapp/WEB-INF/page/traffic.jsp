@@ -9,6 +9,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html lang="en">
 <head>
 <title>交通工具</title>
+</head>
+<body>
 <!-- top -->
 <c:if test="${student.sId == null}">
 	<jsp:include page="top1.jsp"/> 
@@ -38,9 +40,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="agileits_mail_grid_right_grid">
 						<h4>联系方式</h4>
 						<ul class="contact_info">
-							<li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>贵州省遵义市汇川区团泽镇梦润大道梦润源89号</li>
-							<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mengrun@gzmrjt.com">mengrun@gzmrjt.com</a></li>
-							<li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>400-0852-339</li>
+							<li><i class="glyphicon glyphicon-map-marker" ></i>贵州省遵义市汇川区团泽镇梦润大道梦润源89号</li>
+							<li><i class="glyphicon glyphicon-envelope" ></i><a href="mengrun@gzmrjt.com">mengrun@gzmrjt.com</a></li>
+							<li><i class="glyphicon glyphicon-earphone" ></i>400-0852-339</li>
 						</ul>
 					</div>
 				</div>

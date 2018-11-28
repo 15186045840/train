@@ -42,4 +42,10 @@ public class InteractionServiceImpl implements InteractionService {
 		}
 	}
 
+	@Override
+	public Interaction getInteractionById(String interactionId) {
+		// TODO Auto-generated method stub
+		return interactionDao.getInteractionById(interactionId);
+	}
+
 }

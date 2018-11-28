@@ -1,8 +1,7 @@
 package com.hk.bean;
 
-import java.io.Serializable;
 
-public class RoleJurisdiction implements Serializable{
+public class RoleJurisdiction{
 	private String rleId;
 	private String jId;
 	

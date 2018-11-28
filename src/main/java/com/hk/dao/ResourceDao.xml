@@ -28,6 +28,10 @@
     <select id="findAllResources" resultMap="resourceResult">
         select * from resource 
     </select>
+    <!-- 查询多个资源-->
+    <select id="getResources" resultMap="resourceResult">
+        select * from resource order by rId DESC limit 12;
+    </select>
     <!-- 根据课程Id查询所有资源-->
     <select id="getResourcesByCourseId" resultMap="resourceResult">
         select r.* from resource r,course_resource cr

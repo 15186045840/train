@@ -2,25 +2,37 @@ package com.hk.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.shiro.web.filter.authc.FormAuthenticationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.hk.bean.Interaction;
+import com.hk.bean.Resource;
 import com.hk.bean.Student;
 import com.hk.service.InteractionService;
+import com.hk.service.ResourceService;
 import com.hk.service.StudentService;
 
 @Controller
-public class MergeController {
+public class MergeController extends FormAuthenticationFilter {
 	
 	@Autowired
 	private StudentService studentService;
 	
 	@Autowired
 	private InteractionService interactionService;
+	
+	@Autowired
+	private ResourceService resourceService;
 	
 	@RequestMapping("/interaction_insert")
 	public ModelAndView insertInteraction(Interaction interaction){
@@ -35,8 +47,11 @@ public class MergeController {
 	}
 	
 	@RequestMapping("/select")
-	public ModelAndView selectStudent(Student student){
+	public ModelAndView selectStudent(Student student,ServletRequest request,
+			ServletResponse response) throws Exception{		
+		HttpServletRequest httpReq=(HttpServletRequest)request;
 		Student st = studentService.selectStudent(student);
+		httpReq.getSession().setAttribute("student", st);
 		ModelAndView mav=new ModelAndView("index");
 		mav.addObject("student", st);
 		return mav;
@@ -82,8 +97,9 @@ public class MergeController {
 	}
 	@RequestMapping("/yyjx")
 	public ModelAndView Yyjx(){
-		
+		List<Resource> res = resourceService.getResources();
 		ModelAndView mav=new ModelAndView("yyjx");
+		mav.addObject("resource",res);
 		return mav;
 	}
 	@RequestMapping("/jlyt")
@@ -170,7 +186,20 @@ public class MergeController {
 		ModelAndView mav=new ModelAndView("contact");
 		return mav;
 	}
-	
-	
+	@RequestMapping("/yyjxbf")
+	public ModelAndView yyjxbf( String rLink){
+		ModelAndView mav=new ModelAndView("yyjxbf");
+		return mav;
+	}
+	@RequestMapping("/setyyjxbf")
+	@ResponseBody
+	public ModelAndView setyyjxbf(String rLink ,ServletRequest request,
+			ServletResponse response) throws Exception{
+		HttpServletRequest httpReq=(HttpServletRequest)request;
+		httpReq.getSession().setAttribute("rLink", rLink);
+		ModelAndView mov=new ModelAndView("yyjxbf");
+		mov.addObject("link",rLink);
+		return mov;
+	}
 
 }

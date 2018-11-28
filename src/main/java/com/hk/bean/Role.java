@@ -1,8 +1,6 @@
 package com.hk.bean;
 
-import java.io.Serializable;
-
-public class Role implements Serializable{
+public class Role {
 	private String rleId;
 	private String rleName;
 	private String rleDescribe;

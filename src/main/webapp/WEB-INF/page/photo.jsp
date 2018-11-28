@@ -9,6 +9,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html lang="en">
 <head>
 <title>学员学习照</title>
+</head>
+<body>
 <!-- top -->
 <c:if test="${student.sId == null}">
 	<jsp:include page="top1.jsp"/> 
@@ -32,11 +34,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="w3_agile_portfolio_grids">
 			<div class="agile_portfolio_grid">
 				<div class="w3_agileits_portfolio_grid">
-					<a href="${pageContext.request.contextPath}/static
-/images/x6.png" >
+					<a href="/trains/x6.png" >
 						<div class="view effect">
-							<img src="${pageContext.request.contextPath}/static
-/images/x6.png" alt=" " class="img-responsive" />
+							<img src="/trains/x6.png" alt=" " class="img-responsive" />
 							<div class="mask"></div>
 							<div class="content">
 								<h4>梦润学员</h4>
@@ -45,39 +45,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</a>
 				</div>
 				<div class="w3_agileits_portfolio_grid">
-					<a href="${pageContext.request.contextPath}/static
-/images/x1.png" >
+					<a href="/trains/x1.png" >
 						<div class="view effect">
-							<img src="${pageContext.request.contextPath}/static
-/images/x1.png" alt=" " class="img-responsive" />
-							<div class="mask"></div>
-							<div class="content">
-								<h4>梦润学员</h4>
-							</div>
-						</div> 
-					</a>
-				</div>
-			</div>
-			<div class="agile_portfolio_grid">
-				<div class="w3_agileits_portfolio_grid">
-					<a href="${pageContext.request.contextPath}/static
-/images/x2.png" >
-						<div class="view effect">
-							<img src="${pageContext.request.contextPath}/static
-/images/x2.png" alt=" " class="img-responsive" />
-							<div class="mask"></div>
-							<div class="content">
-								<h4>梦润学员</h4>
-							</div>
-						</div> 
-					</a>
-				</div>
-				<div class="w3_agileits_portfolio_grid">
-					<a href="${pageContext.request.contextPath}/static
-/images/x3.png" >
-						<div class="view effect">
-							<img src="${pageContext.request.contextPath}/static
-/images/x3.png" alt=" " class="img-responsive" />
+							<img src="/trains/x1.png" alt=" " class="img-responsive" />
 							<div class="mask"></div>
 							<div class="content">
 								<h4>梦润学员</h4>
@@ -88,11 +58,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 			<div class="agile_portfolio_grid">
 				<div class="w3_agileits_portfolio_grid">
-					<a href="${pageContext.request.contextPath}/static
-/images/x4.png" >
+					<a href="/trains/x2.png" >
 						<div class="view effect">
-							<img src="${pageContext.request.contextPath}/static
-/images/x4.png" alt=" " class="img-responsive" />
+							<img src="/trains/x2.png" alt=" " class="img-responsive" />
 							<div class="mask"></div>
 							<div class="content">
 								<h4>梦润学员</h4>
@@ -101,11 +69,33 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</a>
 				</div>
 				<div class="w3_agileits_portfolio_grid">
-					<a href="${pageContext.request.contextPath}/static
-/images/x5.png" >
+					<a href="/trains/x3.png" >
 						<div class="view effect">
-							<img src="${pageContext.request.contextPath}/static
-/images/x5.png" alt=" " class="img-responsive" />
+							<img src="/trains/x3.png" alt=" " class="img-responsive" />
+							<div class="mask"></div>
+							<div class="content">
+								<h4>梦润学员</h4>
+							</div>
+						</div> 
+					</a>
+				</div>
+			</div>
+			<div class="agile_portfolio_grid">
+				<div class="w3_agileits_portfolio_grid">
+					<a href="/trains/x4.png" >
+						<div class="view effect">
+							<img src="/trains/x4.png" alt=" " class="img-responsive" />
+							<div class="mask"></div>
+							<div class="content">
+								<h4>梦润学员</h4>
+							</div>
+						</div> 
+					</a>
+				</div>
+				<div class="w3_agileits_portfolio_grid">
+					<a href="/trains/x5.png" >
+						<div class="view effect">
+							<img src="/trains/x5.png" alt=" " class="img-responsive" />
 							<div class="mask"></div>
 							<div class="content">
 								<h4>梦润学员</h4>
@@ -118,8 +108,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 	</div>
 <!-- //portfolio -->
-	<script type="text/javascript"  src="${pageContext.request.contextPath}/static
-/js/jquery.gallery.js" ></script>
+	<script type="text/javascript"  src="${pageContext.request.contextPath}/static/js/jquery.gallery.js" ></script>
 	<script>
 		$(function() {
 			$('.w3_agile_portfolio_grids').createSimpleImgGallery();

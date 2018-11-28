@@ -29,6 +29,10 @@
     <select id="getAllNews" resultMap="newResult">
         select * from news 
     </select>
+     <!-- 查询最后十个动态 -->
+    <select id="getNews" resultMap="newResult">
+        select * from news order by nId DESC limit 10;
+    </select>
      <!-- 更新动态 -->
     <update id="updateNew" >
         update news 

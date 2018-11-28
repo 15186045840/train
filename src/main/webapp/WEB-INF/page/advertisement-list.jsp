@@ -110,10 +110,10 @@
 	                        <td class="advertisementid">${advertisement.aId }</td>
 	                        <td>${advertisement.aType }</td>
 	                        <td>${advertisement.aTitle }</td>
-	                        <td>${advertisement.aContent }</td>
+	                        <td><a href="javascript:void(0);" class="show-advertisement-content" >查看</a></td>
 	                        <td>${advertisement.aLink }</td>
-	                        <td><a class="glyphicon glyphicon-pencil show-advertisementinfo-form" aria-hidden="true" title="修改权限信息" href="javascript:void(0);" data-toggle="modal" data-target="#advertisement-form-div"></a>
-	                    	<a class="glyphicon glyphicon-remove delete-this-advertisement" aria-hidden="true" title="删除权限" href="javascript:void(0);"></a></td>
+	                        <td><a class="glyphicon glyphicon-pencil show-advertisementinfo-form" aria-hidden="true" title="修改广告信息" href="javascript:void(0);" data-toggle="modal" data-target="#advertisement-form-div"></a>
+	                    	<a class="glyphicon glyphicon-remove delete-this-advertisement" aria-hidden="true" title="删除广告" href="javascript:void(0);"></a></td>
 	                    </tr>
                     </c:forEach>
               </table>
@@ -182,6 +182,22 @@
 				});
 			}
 		});
+    $(".advertisement-list").on("click",".show-advertisement-content",function(){
+      var advertisementId=$(this).parents("tr").find(".advertisementid").html();
+      var advertisementTd=$(this).parent();
+      //请求查看广告内容
+      $.ajax({
+        url:"getadvertisement.html",
+        data:{advertisementId:advertisementId},
+        type:"POST",
+        dataType:"json",
+        success:function(data){
+          advertisementTd.html("");
+          var content=data.aContent;
+          advertisementTd.append(content);
+        }
+      });
+    });
 		$(".show-add-form").click(function(){
 			resetAdvertisementForm("添加新广告","添加");
 		});
@@ -220,10 +236,10 @@
 	                        '<td class="advertisementid">'+data.aId+'</td>'+
 	                        '<td>'+data.aType+'</td>'+
 	                        '<td>'+data.aTitle+'</td>'+
-	                        '<td>'+data.aContent+'</td>'+
+	                        '<td><a href="javascript:void(0);" class="show-advertisement-content" >查看</a></td>'+
 	                        '<td>'+data.aLink+'</td>'+
-	                        '<td><a class="glyphicon glyphicon-pencil show-advertisementinfo-form" aria-hidden="true" title="修改权限信息" href="javascript:void(0);" data-toggle="modal" data-target="#advertisement-form-div"></a> '+
-	                    	'<a class="glyphicon glyphicon-remove delete-this-advertisement" aria-hidden="true" title="删除权限" href="javascript:void(0);"></a></td>'+
+	                        '<td><a class="glyphicon glyphicon-pencil show-advertisementinfo-form" aria-hidden="true" title="修改广告信息" href="javascript:void(0);" data-toggle="modal" data-target="#advertisement-form-div"></a> '+
+	                    	'<a class="glyphicon glyphicon-remove delete-this-advertisement" aria-hidden="true" title="删除广告" href="javascript:void(0);"></a></td>'+
 	                    '</tr>';
 						$(".advertisement-list tr").eq(0).after(newTr);
 					}

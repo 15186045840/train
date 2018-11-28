@@ -9,6 +9,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html lang="en">
 <head>
 <title>学员故事</title>
+</head>
+<body>
 <!-- top -->
 <c:if test="${student.sId == null}">
 	<jsp:include page="top1.jsp"/> 
@@ -41,7 +43,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="agileits_mail_grid_right_grid">
 						<h4>想看更多精彩故事，请拨打我们的热线电话，按0找成先生进行了解</h4>
 						<ul class="contact_info">
-							<li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>400-0852-339</li>
+							<li><i class="glyphicon glyphicon-earphone"></i>400-0852-339</li>
 						</ul>
 					</div>
 				</div>
@@ -51,8 +53,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<p>从2005年电视剧《仙剑奇侠传》中的逍遥哥哥，到2015年电视剧《琅琊榜》中的梅长苏， 胡歌一路从唇红齿白，一脸单纯清秀的少年，蜕变成更真实的演员，坚韧地重生，用思想填充着演艺之路，他保持一颗童心，一步步转型，努力争取别人对他演员身份的认可；2006年的车祸，在胡歌的右眼留下永远的疤痕，伤害也是一种财富，那场车祸带来的人生思考，使得胡歌更加搏力地融进表演之中，虽然依然有着自我认知的迷茫，然而目标明确，绝不后退。胡歌喜欢摄影，也喜欢写字，他视角独特，充满着奇思妙想。</p>
 					</div>
 					<div class="agileits_mail_grid_right_grid">
-						<h4>卢少勋</h4>
-						<p>卢少勋，一个传奇一般的名字，他的传奇不在于成绩多好，相反他的成绩一塌糊涂；也不说他对社会做了什么贡献，相反，他就是社会上的一个败类，国家蛀虫，但是他就是这么的传奇，乃至于他到了大学，多次创造出了国庆七天假在寝室躺七天对的记录，至今无人打破，寝室其余人都称他为室长，又是一个传奇一般的称号因他而变得传奇，只有他，有资格做室长，只有他，才能让室长这个职位成为传奇，也只有他，才配得上传奇这俩字！卢少勋！这个谜一样的男人，总是无法让迷恋他的人对他无法自拔。</p>
+						<h4>李三石</h4>
+						<p>李三石，一个传奇一般的名字，他的传奇不在于成绩多好，相反他的成绩一塌糊涂；也不说他对社会做了什么贡献，相反，他就是社会上的一个败类，国家蛀虫，但是他就是这么的传奇，乃至于他到了大学，多次创造出了国庆七天假在寝室躺七天对的记录，至今无人打破，寝室其余人都称他为室长，又是一个传奇一般的称号因他而变得传奇，只有他，有资格做室长，只有他，才能让室长这个职位成为传奇，也只有他，才配得上传奇这俩字！李三石！这个谜一样的男人，总是无法让迷恋他的人对他无法自拔。</p>
 					</div>
 				</div>
 				<div class="col-md-7 agileits_w3layouts_contact_gridr">

@@ -61,4 +61,10 @@ public class ResourceServiceImpl implements ResourceService {
 		return resourceDao.getResourcesByCourseId(courseId);
 	}
 
+	@Override
+	public List<Resource> getResources() {
+		// TODO Auto-generated method stub
+		return resourceDao.getResources();
+	}
+
 }
