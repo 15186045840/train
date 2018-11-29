@@ -18,14 +18,14 @@ public class IndexController {
 	private NewService newService;
 	
 	@RequestMapping(value={"/","/index"})
-	public ModelAndView admin_index(){
+	public ModelAndView index(){
 		ModelAndView mov=new ModelAndView("index");
 		List<News> news = newService.getNews();
 		mov.addObject("news",news);
 		return mov;
 	}
 	@RequestMapping("/admin")
-	public ModelAndView index(){
+	public ModelAndView admin_index(){
 		ModelAndView mov=new ModelAndView("admin-index");
 		
 		return mov;

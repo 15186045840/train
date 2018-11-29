@@ -2,7 +2,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="f"%> 
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %> 
-
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -31,8 +30,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="banner">
 	</div>
 <!-- //banner -->
-<!-- bootstrap-pop-up -->
-    <!-- 广告一 -->
+<!--新闻-->
+    <!--新闻详情 -->
     <c:forEach items="${news }" var="news">
       <div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
 		<div class="modal-dialog" role="document">
@@ -53,8 +52,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	  </div>
     </c:forEach>
 	
-	<!-- //广告一 -->
-<!-- //bootstrap-pop-up -->
+	<!-- //新闻详情 -->
+<!-- //新闻 -->
 <!-- banner-bottom -->
 	<div class="banner-bottom">
 		<div class="container">
@@ -125,6 +124,84 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 	</div>
 <!-- //news -->
+
+
+<!--广告-->
+    <!--广告详情 -->
+    <c:forEach items="${news }" var="news">
+      <div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					${news.nTitle}
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
+				</div>
+				<section>
+					<div class="modal-body">
+						<img src="/trains/${news.nUrl}" alt=" " class="img-responsive" />
+						<p> <i>${news.nContent}</i></p>
+					</div>
+					<center><wb:share-button addition="simple" type="button"></wb:share-button></center>
+				</section>
+			</div>
+		</div>
+	  </div>
+    </c:forEach>
+	
+	<!-- //广告详情 -->
+<!-- //广告 -->
+
+<!-- 广告 -->
+	<div class="news">
+		<div class="container">
+			<h3 class="agile_head">广告</h3>
+			<div class="agileits_w3layouts_news_grids">
+				<ul id="flexiselDemo2">	
+				  <c:forEach items="${news }" var="news">
+					<li>
+						<div class="agileits_w3layouts_news_grid">
+							<div class="w3_agileits_news_grid">
+								<img src="/trains/${news.nUrl}" alt=" " class="img-responsive" />
+								<div class="w3_agileits_news_grid_pos">
+								</div>
+							</div>
+							<h5><a href="#" data-toggle="modal" data-target="#myModal">${news.nTitle }</a></h5>
+						</div>
+					</li>
+				  </c:forEach>
+				</ul>
+				<script type="text/javascript">
+						$(window).load(function() {
+							$("#flexiselDemo2").flexisel({
+								visibleItems: 4,
+								animationSpeed: 1000,
+								autoPlay: true,
+								autoPlaySpeed: 3000,    		
+								pauseOnHover: true,
+								enableResponsiveBreakpoints: true,
+								responsiveBreakpoints: { 
+									portrait: { 
+										changePoint:480,
+										visibleItems: 1
+									}, 
+									landscape: { 
+										changePoint:640,
+										visibleItems:2
+									},
+									tablet: { 
+										changePoint:768,
+										visibleItems: 3
+									}
+								}
+							});
+							
+						});
+				</script>
+				<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/jquery.flexisel.js"></script>
+			</div>
+		</div>
+	</div>
+<!-- //广告-->
 <!-- foot -->
 <jsp:include page="foot.jsp"/>
 <!-- //foot -->
