@@ -201,5 +201,10 @@ public class MergeController extends FormAuthenticationFilter {
 		mov.addObject("link",rLink);
 		return mov;
 	}
+	@RequestMapping("/services")
+	public ModelAndView services() {
+		ModelAndView mov=new ModelAndView("services");
+		return mov;
+	}
 
 }

@@ -4,7 +4,7 @@ public class Interaction {
 	private int iId;
 	private String iName;
 	private String iPhone;
-	private String iEmail;
+	private String iCourse;
 	private String iContent;
 	private String iDate;
 	
@@ -26,11 +26,12 @@ public class Interaction {
 	public void setiPhone(String iPhone) {
 		this.iPhone = iPhone;
 	}
-	public String getiEmail() {
-		return iEmail;
+	
+	public String getiCourse() {
+		return iCourse;
 	}
-	public void setiEmail(String iEmail) {
-		this.iEmail = iEmail;
+	public void setiCourse(String iCourse) {
+		this.iCourse = iCourse;
 	}
 	public String getiContent() {
 		return iContent;

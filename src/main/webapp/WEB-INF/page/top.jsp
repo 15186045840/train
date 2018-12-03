@@ -44,11 +44,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<a href="#"
 									 class="hvr-sweep-to-bottom" data-toggle="dropdown">特色课程<b class="caret"></b></a>
 									<ul class="dropdown-menu agile_short_dropdown">
-										<li><a href="tiyan">体验式教学</a></li>
-										<li><a href="ftjx">访谈教学</a></li>
-										<li><a href="xcjj">现场讲解</a></li>
-										<li><a href="xcgm">现场观摩</a></li>
-										<li><a href="yyjx">影音教学</a></li>
+										<li><a href="tiyan">教学理念</a></li>
+										<li><a href="ftjx">教学模式</a></li>
+										<li><a href="xcjj">教学服务</a></li>
+										<li><a href="xcgm">教学目标</a></li>
+										<li><a href="yyjx">教学视频</a></li>
 										<!-- <li><a href="jlyt.jsp">交流研讨</a></li> -->
 									</ul>
 								</li>
@@ -79,6 +79,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<li><a href="redHistory">红色历史文化教学点</a></li>
 										<li><a href="greenTeach">绿色发展教学点</a></li>
 										<li><a href="company">挂牌单位</a></li>
+										<li><a href="services">新闻动态</a></li>
 									</ul>
 								</li>
 							</ul>

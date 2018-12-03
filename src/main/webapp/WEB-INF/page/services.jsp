@@ -8,7 +8,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html lang="en">
 <head>
-<title>Services</title>
+<title>新闻动态</title>
 </head>
 <body>
 <!-- top -->
@@ -23,7 +23,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!-- //top -->
 <!-- banner -->	
 	<div class="banner1">
-		<h3>Services</h3>
+		<h3>新闻动态</h3>
 	</div>
 <!-- //banner -->		
 <!-- services -->
@@ -34,7 +34,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="agile_services_grid">
 						<div class="hover06 column">
 							<div>
-								<figure><img src="images/4.jpg" alt=" " class="img-responsive" /></figure>
+								<figure><img src="/trains/food3.jpg" alt=" " class="img-responsive" /></figure>
 							</div>
 						</div>
 						<div class="agile_services_grid_pos">
@@ -48,7 +48,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="agile_services_grid">
 						<div class="hover06 column">
 							<div>
-								<figure><img src="images/6.jpg" alt=" " class="img-responsive" /></figure>
+								<figure><img src="/trains/food4.jpg" alt=" " class="img-responsive" /></figure>
 							</div>
 						</div>
 						<div class="agile_services_grid_pos">
@@ -62,7 +62,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="agile_services_grid">
 						<div class="hover06 column">
 							<div>
-								<figure><img src="images/1.jpg" alt=" " class="img-responsive" /></figure>
+								<figure><img src="/trains/1.jpg" alt=" " class="img-responsive" /></figure>
 							</div>
 						</div>
 						<div class="agile_services_grid_pos">

@@ -8,7 +8,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html lang="en">
 <head>
-<title>体验式教学</title>
+<title>教学理念</title>
 </head>
 <body>
 <!-- top -->
@@ -23,7 +23,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!-- //top -->
 <!-- banner -->	
 	<div class="banner1">
-		<h3>体验式教学</h3>
+		<h3>教学理念</h3>
 	</div>
 <!-- //banner -->		
 

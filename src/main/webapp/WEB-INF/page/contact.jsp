@@ -52,15 +52,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<textarea name="iContent" placeholder="在此输入您的问题..." required=""></textarea>
 						<div class="agileits_leave">
 							<label>姓名 :</label>
-							<input type="text" name="iName" placeholder=" " required="" />
+							<input type="text" name="iName" placeholder="请输入您的姓名 " required="" />
 						</div>
 						<div class="agileits_leave">
 							<label>电话 :</label>
-							<input type="text" name="iPhone" placeholder=" " required="" />
+							<input type="text" name="iPhone" placeholder=" 请输入您的手机号" required="" />
 						</div>
 						<div class="agileits_leave">
-							<label>邮箱:</label>
-							<input type="email" name="iEmail" placeholder=" " required="" />
+							<label>意向课程:</label>
+							<input type="text" name="iCourse" placeholder="请输入您的意向课程 " required="" />
 						</div>
 						<div class="clearfix"> </div>
 						<input type="submit" value="提交">   &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2601779590&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:2601779590:51" alt="人工客服咨询" title="人工客服咨询"/></a>

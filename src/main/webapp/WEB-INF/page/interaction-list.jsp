@@ -59,7 +59,7 @@
                     <td>ID</td>
                     <td>姓名</td>
                     <td>电话</td>
-                    <td>邮箱</td>
+                    <td>意向课程</td>
                     <td>内容</td>
                     <td>时间</td>
                     <td>操作</td>
@@ -70,7 +70,7 @@
                     <td class="interactionid">${interaction.iId }</td>
                     <td class="interactionname">${interaction.iName }</td>
                     <td class="interactionphone">${interaction.iPhone }</td>
-                    <td class="interactionemail">${interaction.iEmail }</td>
+                    <td class="interactionemail">${interaction.iCourse }</td>
                     <td><a href="javascript:void(0);" class="show-interaction-content" >查看</a></td>
                     <td class="interactiondate">${interaction.iDate }</td>
                     <td>
