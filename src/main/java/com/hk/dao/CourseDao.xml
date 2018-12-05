@@ -2,48 +2,62 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hk.dao.CourseDao">
-    <!-- 添加课程 -->
-    <insert id="addCourse" >
-        insert into course(cId,cName,cType,cDescribe) 
-        value(#{cId},#{cName},#{cType},#{cDescribe}) 
-    </insert>
-    <!-- 删除课程 -->
-    <delete id="deleteCourse" >
-        delete from course 
-        where cId = #{cId}
-    </delete>
-    <!-- 课程实体结果映射 -->
-    <resultMap type="Course" id="courseResult">
-        <id property="cId" column="cId"/>
-        <result property="cName" column="cName"/>
-        <result property="cType" column="cType"/>
-        <result property="cDescribe" column="cDescribe"/>
-    </resultMap>
-    <!-- 根据id查询课程信息 -->
-    <select id="findById"  resultMap="courseResult">
-        select * from course 
-        where cId = #{cId}
-    </select>
-    <!-- 查询所有课程-->
-    <select id="findAllCourses" resultMap="courseResult">
-        select * from course 
-    </select>
-    <!-- 更新课程 -->
-    <update id="updateCourse" >
-        update course 
-        set cName = #{cName},
-        	cType = #{cType},
-        	cDescribe = #{cDescribe}
-        where cId = #{cId}
-    </update>
-    <!-- 删除课程资源关联 -->
-    <delete id="deleteCourseResource" >
-        delete from course_resource 
-        where cId = #{cId}
-    </delete>
-    <!-- 添加课程资源关联 -->
-    <insert id="addCourseResource" >
-        insert into course_resource(cId,rId) 
-        value(#{cId},#{rId})
-    </insert>
+	<!-- 添加课程 -->
+	<insert id="addCourse">
+		insert into course(cId,cName,cType,cDescribe,cTeacher)
+		value(#{cId},#{cName},#{cType},#{cDescribe},#{cTeacher})
+	</insert>
+	<!-- 删除课程 -->
+	<delete id="deleteCourse">
+		delete from course
+		where cId = #{cId}
+	</delete>
+	<!-- 课程实体结果映射 -->
+	<resultMap type="Course" id="courseResult">
+		<id property="cId" column="cId" />
+		<result property="cName" column="cName" />
+		<result property="cType" column="cType" />
+		<result property="cDescribe" column="cDescribe" />
+		<result property="cTeacher" column="cTeacher" />
+		<result property="cLink" column="rLink" />
+	</resultMap>
+	<!-- 根据id查询课程信息 -->
+	<select id="findById" resultMap="courseResult">
+		select * from course
+		where cId = #{cId}
+	</select>
+	<!-- 查询所有课程 -->
+	<select id="findAllCourses" resultMap="courseResult">
+		select * from course 
+	</select>
+	<!-- 查询所有课程资源 -->
+	<select id="selectAllCourses" resultMap="courseResult">
+		select * from course cse ,course_resource cr ,resource res
+		where cse.cId = cr.cId
+			and cr.rId = res.rId 
+			limit #{cnumber},6;
+	</select>
+	<!-- 查询课程总数 -->
+	<select id="selectCoursesCount" resultType="long">
+	 	select count(cId) from course;
+	 </select>
+	<!-- 更新课程 -->
+	<update id="updateCourse">
+		update course
+		set cName = #{cName},
+		cType = #{cType},
+		cDescribe = #{cDescribe},
+		cTeacher = #{cTeacher}
+		where cId = #{cId}
+	</update>
+	<!-- 删除课程资源关联 -->
+	<delete id="deleteCourseResource">
+		delete from course_resource
+		where cId = #{cId}
+	</delete>
+	<!-- 添加课程资源关联 -->
+	<insert id="addCourseResource">
+		insert into course_resource(cId,rId)
+		value(#{cId},#{rId})
+	</insert>
 </mapper>

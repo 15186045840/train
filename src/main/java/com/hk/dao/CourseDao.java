@@ -14,4 +14,6 @@ public interface CourseDao {
 
 	void deleteCourseResource(String courseId);//删除课程资源关联
 	void addCourseResource(CourseResource courseResource);//添加课程资源关联
+	Long selectCoursesCount();//查询课程总数
+	List<Course> selectAllCourses(int cnumber);//查询所有课程资源
 }

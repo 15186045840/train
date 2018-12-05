@@ -2,55 +2,58 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hk.dao.ResourceDao">
-    <!-- 添加资源 -->
-    <insert id="addResource" >
-        insert into resource(rId,rName,rType,rLink) 
-        value(#{rId},#{rName},#{rType},#{rLink}) 
-    </insert>
-    <!-- 删除资源 -->
-    <delete id="deleteResource" >
-        delete from resource 
-        where rId = #{rId}
-    </delete>
-    <!-- 资源实体结果映射 -->
-    <resultMap type="Resource" id="resourceResult">
-        <id property="rId" column="rId"/>
-        <result property="rName" column="rName"/>
-        <result property="rType" column="rType"/>
-        <result property="rLink" column="rLink"/>
-    </resultMap>
-    <!-- 根据id查询资源信息 -->
-    <select id="findById"  resultMap="resourceResult">
-        select * from resource 
-        where rId = #{rId}
-    </select>
-    <!-- 查询所有资源-->
-    <select id="findAllResources" resultMap="resourceResult">
-        select * from resource 
-    </select>
-    <!-- 查询多个资源-->
-    <select id="getResources" resultMap="resourceResult">
-        select * from resource order by rId DESC limit 12;
-    </select>
-    <!-- 根据课程Id查询所有资源-->
-    <select id="getResourcesByCourseId" resultMap="resourceResult">
-        select r.* from resource r,course_resource cr
-        where cr.cId = #{cId}
-        	AND cr.rId = r.rId
-        
-    </select>
-    <!-- 更新资源 -->
-    <update id="updateResource" >
-        update resource 
-        set rName = #{rName},
-        	rType = #{rType},
-        	rLink = #{rLink}
-        where rId = #{rId}
-    </update>
-    <!-- 删除课程资源关联 -->
-    <delete id="deleteCourseResource" >
-        delete from course_resource 
-        where rId = #{rId}
-    </delete>
-    
+	<!-- 添加资源 -->
+	<insert id="addResource">
+		insert into resource(rId,rName,rType,rLink)
+		value(#{rId},#{rName},#{rType},#{rLink})
+	</insert>
+	<!-- 删除资源 -->
+	<delete id="deleteResource">
+		delete from resource
+		where rId = #{rId}
+	</delete>
+	<!-- 资源实体结果映射 -->
+	<resultMap type="Resource" id="resourceResult">
+		<id property="rId" column="rId" />
+		<result property="rName" column="rName" />
+		<result property="rType" column="rType" />
+		<result property="rLink" column="rLink" />
+	</resultMap>
+	<!-- 根据id查询资源信息 -->
+	<select id="findById" resultMap="resourceResult">
+		select * from resource
+		where rId = #{rId}
+	</select>
+	<!-- 查询所有资源 -->
+	<select id="findAllResources" resultMap="resourceResult">
+		select * from resource
+	</select>
+	<!-- 查询多个资源 -->
+	<select id="getResources" resultMap="resourceResult">
+		select* from(
+		select * from resource
+		where rType = "视频"
+		) res order by res.rId DESC limit 12;
+	</select>
+	<!-- 根据课程Id查询所有资源 -->
+	<select id="getResourcesByCourseId" resultMap="resourceResult">
+		select r.* from resource r,course_resource cr
+		where cr.cId = #{cId}
+		AND cr.rId = r.rId
+
+	</select>
+	<!-- 更新资源 -->
+	<update id="updateResource">
+		update resource
+		set rName = #{rName},
+		rType = #{rType},
+		rLink = #{rLink}
+		where rId = #{rId}
+	</update>
+	<!-- 删除课程资源关联 -->
+	<delete id="deleteCourseResource">
+		delete from course_resource
+		where rId = #{rId}
+	</delete>
+
 </mapper>

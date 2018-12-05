@@ -4,8 +4,8 @@
 <mapper namespace="com.hk.dao.AdvertisementDao">
     <!-- 添加广告 -->
     <insert id="addAdvertisement" >
-        insert into advertisement(aId,aType,aTitle,aContent,aLink) 
-        value(#{aId},#{aType},#{aTitle},#{aContent},#{aLink}) 
+        insert into advertisement(aId,aType,aTitle,aPicture,aLink) 
+        value(#{aId},#{aType},#{aTitle},#{aPicture},#{aLink}) 
     </insert>
     <!-- 删除广告 -->
     <delete id="deleteAdvertisement" >
@@ -17,7 +17,7 @@
         <id property="aId" column="aId"/>
         <result property="aType" column="aType"/>
         <result property="aTitle" column="aTitle"/>
-        <result property="aContent" column="aContent"/>
+        <result property="aPicture" column="aPicture"/>
         <result property="aLink" column="aLink"/>
     </resultMap>
     <!-- 根据id查询广告信息 -->
@@ -34,8 +34,22 @@
         update advertisement 
         set aType = #{aType},
         	aTitle = #{aTitle},
-        	aContent = #{aContent},
+        	aPicture = #{aPicture},
         	aLink = #{aLink}
         where aId = #{aId}
     </update>
+    <!-- 查询左侧广告信息 -->
+    <select id="getLeftAdvertisement"  resultMap="advertisementResult">
+        select* from(
+        select * from advertisement 
+        where aType = "左侧"
+        ) at order by at.aId DESC limit 1;
+    </select>
+    <!-- 查询右侧广告信息 -->
+    <select id="getRightAdvertisement"  resultMap="advertisementResult">
+        select* from(
+        select * from advertisement 
+        where aType = "右侧"
+        ) at order by at.aId DESC limit 1;
+    </select>
 </mapper>

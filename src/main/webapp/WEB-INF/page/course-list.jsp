@@ -75,6 +75,10 @@
                             <input type="text" name="cType" class="form-control" id="typeInput" placeholder="课程类型">
                           </div>
                           <div class="form-group">
+                            <label for="teacherInput">授课老师</label>
+                            <input type="text" name="cTeacher" class="form-control" id="teacherInput" placeholder="课程老师">
+                          </div>
+                          <div class="form-group">
                             <label for="describeInput">描述</label>
                             <input type="text" name="cDescribe" class="form-control" id="describeInput" placeholder="课程描述">
                           </div>
@@ -99,6 +103,7 @@
                     <td>ID</td>
                     <td>名称</td>
                     <td>类型</td>
+                    <td>授课老师</td>
                     <td>描述</td>
                     <td>拥有资源</td>
                     <td>操作</td>
@@ -109,6 +114,7 @@
 	                    <td class="courseid">${course.cId }</td>
 	                    <td>${course.cName }</td>
 	                    <td>${course.cType }</td>
+	                    <td>${course.cTeacher }</td>
 	                    <td>${course.cDescribe }</td>
 	                    <td><a href="javascript:void(0);" class="show-course-resources" >查看所有资源</a></td>
 	                    <td><a class="glyphicon glyphicon-pencil show-courseinfo-form" aria-hidden="true" title="修改课程信息" href="javascript:void(0);" data-toggle="modal" data-target="#course-form-div"></a>
@@ -236,6 +242,7 @@
 					$("input[name='cId']").val(data.cId);
 					$("input[name='cName']").val(data.cName);
 					$("input[name='cType']").val(data.cType);
+					$("input[name='cTeacher']").val(data.cTeacher);
 					$("input[name='cDescribe']").val(data.cDescribe);
 				}
 			});
@@ -263,6 +270,7 @@
 			                    '<td class="courseid">'+data.cId+'</td>'+
 			                    '<td>'+data.cName+'</td>'+
 			                    '<td>'+data.cType+'</td>'+
+			                    '<td>'+data.cTeacher+'</td>'+
 			                    '<td>'+data.cDescribe+'</td>'+
 			                    '<td><a href="javascript:void(0);" class="show-course-resources" >查看所有资源</a></td>'+
 			                    '<td><a class="glyphicon glyphicon-pencil show-courseinfo-form" aria-hidden="true" title="修改课程信息" href="javascript:void(0);" data-toggle="modal" data-target="#course-form-div"></a> '+

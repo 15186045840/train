@@ -4,7 +4,7 @@ public class Advertisement {
 	private int aId;
 	private String aType;
 	private String aTitle;
-	private String aContent;
+	private String aPicture;
 	private String aLink;
 	public int getaId() {
 		return aId;
@@ -24,22 +24,17 @@ public class Advertisement {
 	public void setaTitle(String aTitle) {
 		this.aTitle = aTitle;
 	}
-	public String getaContent() {
-		return aContent;
+	public String getaPicture() {
+		return aPicture;
 	}
-	public void setaContent(String aContent) {
-		this.aContent = aContent;
+	public void setaPicture(String aContent) {
+		this.aPicture = aContent;
 	}
 	public String getaLink() {
 		return aLink;
 	}
 	public void setaLink(String aLink) {
 		this.aLink = aLink;
-	}
-	@Override
-	public String toString() {
-		return "Advertisement [aId=" + aId + ", aType=" + aType + ", aTitle=" + aTitle + ", aContent=" + aContent
-				+ ", aLink=" + aLink + "]";
 	}
 
 }

@@ -13,4 +13,6 @@ public interface CourseService {
 	void updateCourse(Course course,String...resourceIds);
 	
 	void addCourseResources(String courseId,String...resourceIds);
+	Long selectCoursesCount();//查询课程总数
+	List<Course> selectAllCourses(int cnumber);//查询所有课程资源
 }

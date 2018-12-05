@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -45,10 +46,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									 class="hvr-sweep-to-bottom" data-toggle="dropdown">特色课程<b class="caret"></b></a>
 									<ul class="dropdown-menu agile_short_dropdown">
 										<li><a href="tiyan">教学理念</a></li>
-										<li><a href="ftjx">教学模式</a></li>
-										<li><a href="xcjj">教学服务</a></li>
+										<!--  <li><a href="ftjx">教学模式</a></li>
+										<li><a href="xcjj">教学服务</a></li> -->
 										<li><a href="xcgm">教学目标</a></li>
 										<li><a href="yyjx">教学视频</a></li>
+										<li><a href="course?currentPage=1">课程大全</a></li>
 										<!-- <li><a href="jlyt.jsp">交流研讨</a></li> -->
 									</ul>
 								</li>
@@ -59,7 +61,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<li><a href="red">红色圣地</a></li>
 										<li><a href="traffic">交通工具</a></li>
 										<li><a href="food">特色美食</a></li>
-										<li><a href="culture">文化产品</a></li>
+										<!-- <li><a href="culture">文化产品</a></li> -->
 									</ul>
 								</li>
 								<li class="dropdown">
@@ -76,17 +78,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									 class="hvr-sweep-to-bottom" data-toggle="dropdown">培训信息<b class="caret"></b></a>
 									<ul class="dropdown-menu agile_short_dropdown">
 										<li><a href="about">关于我们</a></li>
-										<li><a href="redHistory">红色历史文化教学点</a></li>
-										<li><a href="greenTeach">绿色发展教学点</a></li>
+										<!-- <li><a href="redHistory">红色历史文化教学点</a></li>
+										<li><a href="greenTeach">绿色发展教学点</a></li> -->
 										<li><a href="company">挂牌单位</a></li>
-										<li><a href="services">新闻动态</a></li>
+										<!-- <li><a href="services">新闻动态</a></li> -->
 									</ul>
 								</li>
 							</ul>
 							<div class="agileinfo_search">
-								<form action="#" method="post">
-									<input type="text" name="Search" placeholder="输入关键字..." required="">
-									<input type="submit" value=" ">
+								<form action="http://zhannei.baidu.com/cse/site" target="_blank" >
+									<input type="text" name="q" size="30" placeholder="输入关键字..." >
+									<input type="submit" value="">
+									<input type="hidden" name="cc" value="http://localhost:8080/train/index">
 								</form>
 							</div>
 						</nav>
@@ -98,20 +101,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!-- //header -->
 
 <!-- 侧边广告 -->
-<div id="left_layer" style="position:fixed;z-index:999999; top:200px; left:0px;">
-
-<a href="https://www.baidu.com" target="_blank"><img src="http://www.mlhd.org/wb/ad/xuanfu/zhifubao.png"><br></a>
-
-<a href="javascript:;" onclick="javascript:document.getElementById('left_layer').style.display='none';"><center>关闭</center></a>
-
-</div>
-<div id="right_layer" style="position:fixed;z-index:999999; top:200px; right:0px;">
-
-<a href="https://www.baidu.com" target="_blank"><img src="http://www.mlhd.org/wb/ad/xuanfu/zhifubao.png"><br></a>
-
-<a href="javascript:;" onclick="javascript:document.getElementById('right_layer').style.display='none';"><center>关闭</center></a>
-
-</div>
+	<div id="left_layer" style="position:fixed;z-index:999999; top:200px; left:0px;">
+		<a href="${left.aLink}" target="_blank"><img src="/trains/${left.aPicture}" width="150" height="300" ><br></a>
+		<a href="javascript:;" onclick="javascript:document.getElementById('left_layer').style.display='none';">
+		<center>关闭</center></a>
+	</div>					
+	<div id="right_layer" style="position:fixed;z-index:999999; top:200px; right:0px;">
+		<a href="${right.aLink}" target="_blank"><img src="/trains/${right.aPicture}" width="150" height="300" ><br></a>
+		<a href="javascript:;" onclick="javascript:document.getElementById('right_layer').style.display='none';">
+		<center>关闭</center></a>
+	</div>
 <!-- //侧边广告 -->
 <script src="${pageContext.request.contextPath}/static/js/jquery.magnific-popup.js" type="text/javascript"></script>
 <script>
