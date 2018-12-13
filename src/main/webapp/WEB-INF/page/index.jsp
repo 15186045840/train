@@ -30,30 +30,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="banner">
 	</div>
 <!-- //banner -->
-<!--新闻-->
-    <!--新闻详情 -->
-    <c:forEach items="${news }" var="news">
-      <div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					${news.nTitle}
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
-				</div>
-				<section>
-					<div class="modal-body">
-						<img src="/trains/${news.nUrl}" alt=" " class="img-responsive" />
-						<p> <i>${news.nContent}</i></p>
-					</div>
-					<center><wb:share-button addition="simple" type="button"></wb:share-button></center>
-				</section>
-			</div>
-		</div>
-	  </div>
-    </c:forEach>
-	
-	<!-- //新闻详情 -->
-<!-- //新闻 -->
 <!-- banner-bottom -->
 	<div class="banner-bottom">
 		<div class="container">
@@ -73,6 +49,29 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 	</div>
 <!-- //banner-bottom -->
+<!--新闻-->
+    <!--新闻详情 -->
+    <c:forEach items="${news}" var="news">
+      <div class="modal video-modal fade" id="myModal${news.nId}" tabindex="-1" role="dialog" aria-labelledby="myModal">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					${news.nTitle}
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
+				</div>
+				<section>
+					<div class="modal-body">
+						<img src="/trains/${news.nUrl}" alt=" " class="img-responsive" />
+						<p> <i>${news.nContent}</i></p>
+					</div>
+					<center><wb:share-button addition="simple" type="button"></wb:share-button></center>
+				</section>
+			</div>
+		</div>
+	  </div>
+    </c:forEach>
+	<!-- //新闻详情 -->
+<!-- //新闻 -->
 <!-- 新闻 -->
 	<div class="news">
 		<div class="container">
@@ -87,7 +86,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<div class="w3_agileits_news_grid_pos">
 								</div>
 							</div>
-							<h5><a href="#" data-toggle="modal" data-target="#myModal">${news.nTitle }</a></h5>
+							<h5><a href="#" data-toggle="modal" data-target="#myModal${news.nId}">${news.nTitle }</a></h5>
 						</div>
 					</li>
 				  </c:forEach>
@@ -128,18 +127,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <!--广告-->
     <!--广告详情 -->
-    <c:forEach items="${news }" var="news">
-      <div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
+    <c:forEach items="${list }" var="list">
+      <div class="modal video-modal fade" id="myModal_1${list.aId}" tabindex="-1" role="dialog" aria-labelledby="myModal">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					${news.nTitle}
+					${list.aTitle}
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
 				</div>
 				<section>
 					<div class="modal-body">
-						<img src="/trains/${news.nUrl}" alt=" " class="img-responsive" />
-						<p> <i>${news.nContent}</i></p>
+						<img src="/trains/${list.aPicture}" alt=" " class="img-responsive" />
+						<p> <i>${list.aTitle}</i></p>
 					</div>
 					<center><wb:share-button addition="simple" type="button"></wb:share-button></center>
 				</section>
@@ -157,15 +156,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<h3 class="agile_head">广告</h3>
 			<div class="agileits_w3layouts_news_grids">
 				<ul id="flexiselDemo2">	
-				  <c:forEach items="${news }" var="news">
+				  <c:forEach items="${list }" var="list">
 					<li>
 						<div class="agileits_w3layouts_news_grid">
 							<div class="w3_agileits_news_grid">
-								<img src="/trains/${news.nUrl}" alt=" " class="img-responsive" />
+								<img src="/trains/${list.aPicture}" alt=" " class="img-responsive" />
 								<div class="w3_agileits_news_grid_pos">
 								</div>
 							</div>
-							<h5><a href="#" data-toggle="modal" data-target="#myModal">${news.nTitle }</a></h5>
+							<h5><a href="#" data-toggle="modal" data-target="#myModal_1${list.aId}">${list.aTitle }</a></h5>
 						</div>
 					</li>
 				  </c:forEach>

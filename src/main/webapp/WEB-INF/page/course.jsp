@@ -38,20 +38,20 @@
 					height="200px" />
 			</div>
 			<div class="div-2">
-				<p>
+				<p style="font-size:20px">
 					<span style="color: blue"><b>课程价格: </b></span><span>请咨询</span>
 				</p>
-				<p>
+				<p style="font-size:20px">
 					<span style="color: blue"><b>授课老师:</b></span>${course.cTeacher }</p>
-				<p>
+				<p style="font-size:20px">
 					<span style="color: blue"><b>课程描述:</b></span>${course.cDescribe }</p>
 			</div>
 			<div class="div-3">
-				<p>
+				<p style="font-size:20px">
 					<span style="color: blue"><b>授课机构:</b></span><span class="span-1"><a
 						href="index" target="_blank" class="username">梦润培训中心</a></span>
 				</p>
-				<p>
+				<p style="font-size:20px">
 					<span style="color: blue"><b>开班时间:</b></span><span>滚动开班</span>
 				</p>
 			</div>
@@ -60,7 +60,11 @@
 </c:forEach>
 <!-- 分页 -->
 <center>
-<a href="course?currentPage=1">首页</a>
+   <form action="course">
+   		<input type="text" name="currentPage" size="2">
+   		<input type="submit" value="跳转">
+   </form>
+<a href="course?currentPage=1" >首页</a>
    	<c:if test="${currentPage != 1 }">
    		<a href="course?currentPage=${currentPage-1 }">上一页</a>
    	</c:if>
@@ -70,10 +74,7 @@
    	<a href="course?currentPage=${page  }">尾页</a>
    	<span>当前第${currentPage}页</span>
    	<span>共${page }页</span>
-   <form action="course">
-   		<input type="text" name="currentPage">
-   		<input type="submit" value="跳转">
-   </form>
+
 </center>
 <!-- 分页尾 -->
 <style>

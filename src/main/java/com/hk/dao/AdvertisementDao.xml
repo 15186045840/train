@@ -29,6 +29,10 @@
     <select id="findAllAdvertisements" resultMap="advertisementResult">
         select * from advertisement 
     </select>
+    <!-- 查询最后几条广告-->
+    <select id="getAdvertisements" resultMap="advertisementResult">
+        select * from advertisement order by aId DESC limit 6;
+    </select>
     <!-- 更新广告 -->
     <update id="updateAdvertisement" >
         update advertisement 

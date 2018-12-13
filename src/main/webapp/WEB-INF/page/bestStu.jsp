@@ -35,16 +35,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="w3l_team_grd">
 						<img src="/trains/bs1.png" alt=" " class="img-responsive" />
 						<div class="w3_team_grid">
-							<h4>金城武</h4>
+							<h4>学员1</h4>
 							<h5>2014届最佳学员</h5>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-3 w3layouts_team_grid">
 					<div class="w3l_team_grd">
-						<img src="/trains/bs2.jpg" alt=" " class="img-responsive" />
+						<img src="/trains/bs2.png" alt=" " class="img-responsive" />
 						<div class="w3_team_grid">
-							<h4>彭于晏</h4>
+							<h4>学员2</h4>
 							<h5>2015届最佳学员</h5>
 						</div>
 					</div>
@@ -53,7 +53,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="w3l_team_grd">
 						<img src="/trains/bs3.png" alt=" " class="img-responsive" />
 						<div class="w3_team_grid">
-							<h4>胡歌</h4>
+							<h4>学员3</h4>
 							<h5>2016届最佳学员</h5>
 						</div>
 					</div>
@@ -62,7 +62,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="w3l_team_grd">
 						<img src="/trains/bs4.png" alt=" " class="img-responsive" />
 						<div class="w3_team_grid">
-							<h4>霍建华</h4>
+							<h4>学员4</h4>
 							<h5>2017届最佳学员</h5>
 						</div>
 					</div>

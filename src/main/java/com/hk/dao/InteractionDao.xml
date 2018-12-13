@@ -4,8 +4,8 @@
 <mapper namespace="com.hk.dao.InteractionDao">
     <!-- 添加反馈 -->
     <insert id="addInteraction" >
-        insert into interaction(iName,iPhone,iCourse,iContent,iDate) 
-        value(#{iName},#{iPhone},#{iCourse},#{iContent},#{iDate}) 
+        insert into interaction(iName,iPhone,iCourse,iContent,iDate,iJudge) 
+        value(#{iName},#{iPhone},#{iCourse},#{iContent},#{iDate},#{iJudge}) 
     </insert>
     <!-- 反馈实体结果映射 -->
     <resultMap type="Interaction" id="interactionResult">
@@ -15,10 +15,23 @@
         <result property="iCourse" column="iCourse"/>
         <result property="iContent" column="iContent"/>
         <result property="iDate" column="iDate"/>
+        <result property="iJudge" column="iJudge"/>
     </resultMap>
     <!-- 查询所有反馈-->
     <select id="getAllInteractions" resultMap="interactionResult">
         select * from interaction
+    </select>
+    <!-- 查询课程总数 -->
+	<select id="selectInteractionsCount" resultType="long">
+	 	select count(iId) from interaction;
+	 </select>
+    <!-- 查询反馈显示-->
+    <select id="getInteractions" resultMap="interactionResult">
+        select * from interaction where iJudge = 1 limit #{cnumber},10;
+    </select>
+    <!-- 根据Id获取反馈显示-->
+    <select id="getJudgeById" resultMap="interactionResult">
+        select * from interaction where iId = #{iId}
     </select>
     <!-- 删除反馈 -->
     <delete id="deleteInteraction" >
@@ -29,4 +42,9 @@
         select * from interaction 
         where iId = #{iId}
     </select>
+    <update id="updateJudge">
+    	update interaction 
+        set iJudge = #{iJudge}
+        where iId = #{iId}
+    </update>
 </mapper>

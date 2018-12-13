@@ -48,5 +48,18 @@ public class InteractionController {
 	public Interaction getInteractionById(String interactionId){
 		return interactionService.getInteractionById(interactionId);
 	}
-
+	@RequiresPermissions("interaction:list")
+	@RequestMapping("/getJudge")
+	@ResponseBody
+	public Interaction getJudgeById(String interactionId){
+		return interactionService.getJudgeById(interactionId);
+	}
+	@RequiresPermissions("interaction:update")
+	@RequestMapping("/update")
+	@ResponseBody
+	public void update(Interaction interaction){
+		System.out.println(interaction.getiId());
+		System.out.println(interaction.getiJudge());
+		interactionService.updateJudge(interaction);
+	}
 }

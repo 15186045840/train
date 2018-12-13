@@ -45,10 +45,31 @@ public class MergeController extends FormAuthenticationFilter {
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		String da = df.format(day);
 		interaction.setiDate(da);
+		interaction.setiJudge(0);
 		System.out.println(interaction);
 		interactionService.addInteraction(interaction);
 		ModelAndView mav = new ModelAndView("index");
 		return mav;
+	}
+
+	@RequestMapping("/content")
+	public ModelAndView content(int currentPage) {
+		// 显示条数
+		int pageCount = 10;
+		int start = (currentPage - 1) * pageCount;
+		// 查询数据库中数据的页数
+		Long page = interactionService.selectInteractionsCount();
+		// 查询数据库中数据的页数
+		List<Interaction> list = interactionService.getInteractions(start);
+		// 返回页面
+		ModelAndView mov = new ModelAndView("content");
+		// 返回课程页数
+		mov.addObject("page", page);
+		// 当前课程页数
+		mov.addObject("currentPage", currentPage);
+		// 返回课程列表
+		mov.addObject("interactions", list);
+		return mov;
 	}
 
 	@RequestMapping("/select")
@@ -235,20 +256,20 @@ public class MergeController extends FormAuthenticationFilter {
 
 	@RequestMapping("/course")
 	public ModelAndView course(int currentPage) {
-		//	显示条数
+		// 显示条数
 		int pageCount = 6;
 		int start = (currentPage - 1) * pageCount;
-		//查询数据库中数据的页数
+		// 查询数据库中数据的页数
 		Long page = courseService.selectCoursesCount();
-		//查询数据库中数据的页数
+		// 查询数据库中数据的页数
 		List<Course> list = courseService.selectAllCourses(start);
-		//	返回页面
+		// 返回页面
 		ModelAndView mov = new ModelAndView("course");
-		//返回课程页数
+		// 返回课程页数
 		mov.addObject("page", page);
-		//当前课程页数
+		// 当前课程页数
 		mov.addObject("currentPage", currentPage);
-		//返回课程列表
+		// 返回课程列表
 		mov.addObject("courses", list);
 		return mov;
 	}

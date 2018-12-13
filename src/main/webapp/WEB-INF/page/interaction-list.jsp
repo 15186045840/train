@@ -52,6 +52,37 @@
                   </div>
                 </div> 
             </div>
+             <!--修改反馈表单-->
+            <div class="modal fade " id="interaction-form-div" tabindex="-1" role="dialog" 
+            	 aria-labelledby="mySmallModalLabel">
+                  <div class="modal-dialog modal-sm" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        	<span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" >修改反馈显示</h4>
+                      </div>
+                      <div class="modal-body">
+                      	<form class="update-interaction-form">
+                      		<div class="form-group">
+								<label for="idInput">ID</label> <input type="text"
+										name="iId" class="form-control" id="idInput"
+											placeholder="ID">
+							</div>
+                      		<div class="form-group">
+								<label for="judgeInput">是否显示</label> <input type="text"
+										name="iJudge" class="form-control" id="judgeInput"
+											placeholder=显示>
+							</div>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-primary update-interaction-submit">提交 </button>
+                      </div>
+                    </div>
+                  </div>
+            </div>
             <div class="space-div"></div>
             <table class="table table-hover table-bordered interaction-list">
               <tr>
@@ -61,6 +92,7 @@
                     <td>电话</td>
                     <td>意向课程</td>
                     <td>内容</td>
+                    <td>是否显示(是1否0)</td>
                     <td>时间</td>
                     <td>操作</td>
                 </tr>
@@ -72,9 +104,14 @@
                     <td class="interactionphone">${interaction.iPhone }</td>
                     <td class="interactionemail">${interaction.iCourse }</td>
                     <td><a href="javascript:void(0);" class="show-interaction-content" >查看</a></td>
+                    <td class="interactionjudge">${interaction.iJudge }</td>
                     <td class="interactiondate">${interaction.iDate }</td>
                     <td>
-                      <a class="glyphicon glyphicon-remove delete-this-interaction" aria-hidden="true" title="删除反馈" href="javascript:void(0);"></a>
+                      <a class="glyphicon glyphicon-pencil show-interaction-form"
+						 aria-hidden="true" title="修改反馈信息" href="javascript:void(0);"
+						 data-toggle="modal" data-target="#interaction-form-div"></a>
+                      <a class="glyphicon glyphicon-remove delete-this-interaction" 
+                      	 aria-hidden="true" title="删除反馈" href="javascript:void(0);"></a>
                     </td>
                   </tr>
                 </c:forEach>
@@ -145,6 +182,33 @@
         });
       }
     });
+    $(".interaction-list").on( "click",".show-interaction-form",function() {
+				var interactionId = $(this).parents("tr").find(".interactionid").html();
+				$.ajax({
+					url : "getJudge.html",
+					data : {interactionId : interactionId},
+					type : "POST",
+					dataType : "json",
+					success : function(data) {
+						$(".update-interaction-form input[name='iId']").val(
+								data.iId);
+						$(".update-interaction-form input[name='iJudge']").val(
+								data.iJudge);
+					}
+				});
+			});
+	//确认修改用户角色
+	$(".update-interaction-submit").click(function(){
+		$.ajax({
+			url:"update.html",
+			data:$(".update-interaction-form").serialize(),
+			type:"POST",
+			success:function(){
+				$("#interaction-form-div").modal("hide");
+				showTips("更新成功！");
+			}
+		});
+	});
     </script>
   </body>
 </html>

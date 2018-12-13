@@ -66,4 +66,10 @@ public class AdvertisementServiceImpl implements AdvertisementService {
 		return advertisementDao.getRightAdvertisement();
 	}
 
+	@Override
+	public List<Advertisement> getAdvertisements() {
+		// TODO Auto-generated method stub
+		return advertisementDao.getAdvertisements();
+	}
+
 }

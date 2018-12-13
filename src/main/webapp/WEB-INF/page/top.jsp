@@ -81,13 +81,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<!-- <li><a href="redHistory">红色历史文化教学点</a></li>
 										<li><a href="greenTeach">绿色发展教学点</a></li> -->
 										<li><a href="company">挂牌单位</a></li>
+										<li><a href="content?currentPage=1">问题反馈</a></li>
 										<!-- <li><a href="services">新闻动态</a></li> -->
 									</ul>
 								</li>
 							</ul>
 							<div class="agileinfo_search">
-								<form action="http://zhannei.baidu.com/cse/site" target="_blank" >
-									<input type="text" name="q" size="30" placeholder="输入关键字..." >
+								<form action="search" target="_blank" >
+									<input type="text" name="search" size="30" placeholder="输入关键字..." >
 									<input type="submit" value="">
 									<input type="hidden" name="cc" value="http://localhost:8080/train/index">
 								</form>
@@ -100,7 +101,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</div>
 <!-- //header -->
 
-<!-- 侧边广告 -->
+<!-- 侧边广告 
 	<div id="left_layer" style="position:fixed;z-index:999999; top:200px; left:0px;">
 		<a href="${left.aLink}" target="_blank"><img src="/trains/${left.aPicture}" width="150" height="300" ><br></a>
 		<a href="javascript:;" onclick="javascript:document.getElementById('left_layer').style.display='none';">
@@ -111,7 +112,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<a href="javascript:;" onclick="javascript:document.getElementById('right_layer').style.display='none';">
 		<center>关闭</center></a>
 	</div>
-<!-- //侧边广告 -->
+ //侧边广告 -->
 <script src="${pageContext.request.contextPath}/static/js/jquery.magnific-popup.js" type="text/javascript"></script>
 <script>
 	$(document).ready(function() {

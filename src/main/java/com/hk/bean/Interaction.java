@@ -7,6 +7,7 @@ public class Interaction {
 	private String iCourse;
 	private String iContent;
 	private String iDate;
+	private int iJudge;
 	
 	public int getiId() {
 		return iId;
@@ -44,6 +45,12 @@ public class Interaction {
 	}
 	public void setiDate(String iDate) {
 		this.iDate = iDate;
+	}
+	public int getiJudge() {
+		return iJudge;
+	}
+	public void setiJudge(int iJudge) {
+		this.iJudge = iJudge;
 	}
 	
 }

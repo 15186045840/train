@@ -12,4 +12,5 @@ public interface AdvertisementDao {
 	void updateAdvertisement(Advertisement advertisement);//更新广告
 	Advertisement getLeftAdvertisement();//获取左侧广告
 	Advertisement getRightAdvertisement();//获取右侧广告
+	List<Advertisement> getAdvertisements();//查询最后几条广告
 }

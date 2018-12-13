@@ -13,7 +13,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.hk.bean.Advertisement;
 import com.hk.bean.News;
-import com.hk.bean.Student;
 import com.hk.service.AdvertisementService;
 import com.hk.service.NewService;
 
@@ -35,11 +34,13 @@ public class IndexController {
 		List<News> news = newService.getNews();
 		Advertisement left = advertisementService.getLeftAdvertisement();
 		Advertisement right = advertisementService.getRightAdvertisement();
+		List<Advertisement> list = advertisementService.getAdvertisements();
 		httpReq.getSession().setAttribute("left", left);
 		httpReq.getSession().setAttribute("right", right);
 		mov.addObject("news",news);
 		mov.addObject("left",left);
 		mov.addObject("right",right);
+		mov.addObject("list",list);
 		return mov;
 	}
 	@RequestMapping("/admin")
@@ -49,11 +50,11 @@ public class IndexController {
 		return mov;
 	}
 	
-	@RequestMapping("index.jsp")
-	public ModelAndView index2(){
-		System.out.println("你好");
-		//ModelAndView mov=new ModelAndView("");
+	@RequestMapping("search")
+	public ModelAndView search(String search){
+		System.out.println(search+"搜索");
+		ModelAndView mov=new ModelAndView("index");
 		
-		return null;
+		return mov;
 	}
 }
